@@ -9,8 +9,8 @@ function ChatInput({chatId}) {
       <form className='p-5 space-x-5 flex-1'>
         <input
         value={prompt}
-        onChange={(e)=>setPrompt(e,target.value)} 
-        type={text}
+        onChange={(e)=>setPrompt(e.target.value)} 
+        type="text"
         placeholder="Type your text here..."
         />
         <button type='submit'>

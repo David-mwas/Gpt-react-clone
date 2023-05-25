@@ -10,7 +10,7 @@ function NewChat() {
   const {data:session} =useSession()
   const createNewChat=async ()=>{
     const doc = await addDoc(
-      collection(db,"users",session.user.email,"chats"),{
+      collection(db,"users",session?.user.email,"chats"),{
         messages:[],
         userId:session.user.email,
         createdAt:serverTimestamp()
@@ -21,7 +21,7 @@ function NewChat() {
   return (
     <div 
     onClick={createNewChat}
-    className='flex border border-gray-700 chatRow p-4'>
+    className='flex border border-gray-700 chatRow p-4 mb-4'>
         <PlusIcon className='h-4 w-4 '/>
         <p>New Chat</p>
     </div>
